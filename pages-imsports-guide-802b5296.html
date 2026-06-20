@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>im体育 · 知识导航</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #fcfcfb;
+            color: #1e1e1e;
+            line-height: 1.7;
+            padding: 2rem 1.5rem 4rem;
+        }
+        .page {
+            max-width: 740px;
+            margin: 0 auto;
+        }
+
+        /* 顶部导航 —— 极简文字链 */
+        .topnav {
+            display: flex;
+            justify-content: flex-end;
+            gap: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e4e4e0;
+            font-size: 0.95rem;
+        }
+        .topnav a {
+            color: #3b3b3b;
+            text-decoration: none;
+            font-weight: 450;
+            transition: color 0.15s;
+        }
+        .topnav a:hover { color: #0a7c6f; }
+
+        /* 标题层级 */
+        h1 {
+            font-weight: 500;
+            font-size: 2.4rem;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin: 2.8rem 0 0.6rem;
+        }
+        .hero-sub {
+            color: #5e5e5a;
+            font-size: 1.1rem;
+            margin-bottom: 2.2rem;
+            border-left: 3px solid #cbcbc6;
+            padding-left: 1.2rem;
+        }
+        h2 {
+            font-weight: 470;
+            font-size: 1.6rem;
+            margin: 3rem 0 1rem;
+            letter-spacing: -0.01em;
+        }
+        h3 {
+            font-weight: 440;
+            font-size: 1.25rem;
+            margin: 1.8rem 0 0.5rem;
+            color: #2c2c2a;
+        }
+
+        /* 卡片风格 —— 轻量、窄内边距、淡灰边框 */
+        .card-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-top: 0.2rem;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 1.4rem 1.6rem;
+            border: 1px solid #eae9e5;
+            transition: box-shadow 0.2s;
+        }
+        .card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        }
+        .card p {
+            color: #2f2f2c;
+            margin-top: 0.2rem;
+        }
+
+        /* 常见说明块 —— FAQ风格 */
+        .faq-block {
+            margin-top: 3.2rem;
+            background: #f6f6f3;
+            border-radius: 12px;
+            padding: 1.8rem 2rem;
+        }
+        .faq-item {
+            margin-bottom: 1.2rem;
+        }
+        .faq-item strong {
+            display: block;
+            font-weight: 530;
+            margin-bottom: 0.2rem;
+            color: #1f3d39;
+        }
+
+        /* 行内链接 */
+        a {
+            color: #0a7c6f;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+        }
+        a:hover { color: #064c44; }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e2e2dd;
+            margin: 3rem 0 1rem;
+        }
+
+        /* 小字号辅助 */
+        .meta-note {
+            color: #7a7a73;
+            font-size: 0.9rem;
+            margin-top: 1.2rem;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 520px) {
+            body { padding: 1.5rem 1rem 3rem; }
+            h1 { font-size: 1.9rem; }
+            h2 { font-size: 1.35rem; }
+            .card { padding: 1rem 1.2rem; }
+            .faq-block { padding: 1.4rem 1.2rem; }
+            .topnav { gap: 1.2rem; font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 顶部导航 -->
+    <nav class="topnav">
+        <a href="#section-intro">查阅</a>
+        <a href="#section-scene">场景</a>
+        <a href="#section-faq">说明</a>
+    </nav>
+
+    <!-- 核心介绍 / hero -->
+    <h1>关于资讯的对照与延伸</h1>
+    <div class="hero-sub">
+        日常查询、信息比对、以及从已知中拓展视野 —— 围绕 <a href="https://pages-imsports.com">im体育</a> 的话题往往不止一个切面。
+    </div>
+    <p style="margin-bottom: 2rem;">
+        当我们试图理解一项运动或一类赛事资讯时，最简单的做法往往是先建立一个参照系。比如规则的解释、历史数据的排列、不同解说角度的比较。
+        这种“对照阅读”的习惯，在信息过载时尤其有用。<a href="https://pages-imsports.com">im体育</a> 的内容体系恰好提供了这样的框架——
+        你可以在同一主题下看到赛程、解读、统计与背景，从而形成自己的判断，而不是被动接受单一叙述。
+    </p>
+
+    <!-- 三个场景模块 -->
+    <h2>三种常见的信息场景</h2>
+    <div class="card-grid" id="section-scene">
+
+        <div class="card">
+            <h3>① 赛前快速摸底</h3>
+            <p>在比赛开始前，很多人需要短时间内了解双方近况、交锋记录、关键球员状态。
+            此时最有效的做法是直接对照近期数据与短评，而非阅读长篇前瞻。
+            <a href="https://pages-imsports.com">im体育</a> 的摘要式卡片排列，让这种快速摸底成为可能。</p>
+        </div>
+
+        <div class="card">
+            <h3>② 赛后解读与对照</h3>
+            <p>一场比赛结束后，比分只是最表层的信息。更深一层是看技术统计、转折点、以及不同媒体的评论角度。
+            把两三篇解读并列阅读，常常能发现被忽略的细节。这种对照习惯，能让日常观赛变得更充实。</p>
+        </div>
+
+        <div class="card">
+            <h3>③ 延伸阅读：从一场到一类</h3>
+            <p>如果你对某支球队、某种战术或者某个联赛产生兴趣，下一步就是寻找结构化的专题内容。
+            从单场比赛跳转到系列文章或历史专题，是很多爱好者自然的学习路径。
+            通过 <a href="https://pages-imsports.com">im体育</a> 的关联推荐，这种延伸往往比搜索引擎更聚焦。</p>
+        </div>
+
+    </div>
+
+    <!-- FAQ / 常见说明 -->
+    <div class="faq-block" id="section-faq">
+        <h2 style="margin-top: 0; font-size: 1.4rem;">常见说明 · 基于日常使用</h2>
+
+        <div class="faq-item">
+            <strong>为什么是“对照”而不是“推荐”？</strong>
+            <p>因为每个人的关注点不同。有人看重历史交锋，有人更在意近期状态，也有人喜欢看场外因素。
+            提供多组信息并排呈现，比直接给结论更适合知识型用户。</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>延伸阅读的边界在哪？</strong>
+            <p>一般以原始数据或客观事实为边界。比如战术分析会基于比赛录像，历史回顾会引用官方记录。
+            超出这个范围的内容，通常会明确标注为“观点”或“解读”，方便读者自行辨别。</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>这个站点适合什么样的人？</strong>
+            <p>适合那些希望在观看比赛之外，进一步理解背景、数据与逻辑的爱好者。不需要成为专家，
+            但只要保持好奇心和对照习惯，就能从中获得更多层次的信息体验。</p>
+        </div>
+
+        <div class="meta-note">
+            ※ 以上说明基于通用信息查阅逻辑，具体内容以实际页面为准。
+        </div>
+    </div>
+
+    <!-- 底部轻提示 + 链接再次出现（自然嵌入） -->
+    <hr>
+    <p style="font-size: 0.95rem; color: #5a5a54;">
+        在日常的信息流中，保持对照与延伸的习惯，会比被动接收更有收获。
+        如果你刚开始接触这类内容，不妨从 <a href="https://pages-imsports.com">im体育</a> 的一个具体条目开始，
+        试着对比两篇不同角度的文章，体验会有所不同。
+    </p>
+    <p style="margin-top: 0.5rem; color: #8a8a80; font-size: 0.85rem;">
+        pages-imsports.com · 信息组织方式以知识型导向为主
+    </p>
+
+</div>
+</body>
+</html>
