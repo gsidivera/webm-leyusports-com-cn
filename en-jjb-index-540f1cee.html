@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jjb · 产品说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', sans-serif;
+      background-color: #fbfbfa;
+      color: #1e2a2f;
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 4rem;
+      flex: 1;
+    }
+
+    /* 标题层级 清晰 */
+    h1 {
+      font-weight: 500;
+      font-size: 2.1rem;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.4rem;
+      color: #1e2a2f;
+    }
+
+    .subhead {
+      font-size: 1rem;
+      color: #6b7a82;
+      margin-bottom: 2.8rem;
+      border-left: 2px solid #cfd9de;
+      padding-left: 1.2rem;
+    }
+
+    h2 {
+      font-weight: 500;
+      font-size: 1.3rem;
+      margin: 2.5rem 0 0.9rem;
+      color: #1e2a2f;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+      font-size: 0.98rem;
+      color: #2d3a40;
+    }
+
+    /* 模块化卡片 · 极简留白 */
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin: 1.8rem 0 1rem;
+    }
+
+    .feature-item {
+      background: #ffffff;
+      border: 1px solid #ebeff0;
+      border-radius: 20px;
+      padding: 1.4rem 1.3rem;
+      flex: 1 1 190px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .feature-item:hover {
+      border-color: #d0dadf;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    }
+
+    .feature-item em {
+      display: block;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+      color: #1a282f;
+    }
+
+    .feature-item span {
+      font-size: 0.9rem;
+      color: #54626a;
+    }
+
+    .scene-note {
+      background-color: #f3f6f8;
+      border-radius: 24px;
+      padding: 1.6rem 1.5rem;
+      margin: 2rem 0 1.5rem;
+    }
+
+    .scene-note p {
+      margin-bottom: 0.6rem;
+      font-size: 0.96rem;
+    }
+
+    .scene-note p:last-child {
+      margin-bottom: 0;
+    }
+
+    .tip-block {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      background: #ffffff;
+      border-left: 3px solid #b8c9d1;
+      padding: 1.2rem 1.2rem 1.2rem 1.4rem;
+      margin: 2rem 0 1rem;
+      border-radius: 0 14px 14px 0;
+    }
+
+    .tip-block .marker {
+      font-weight: 450;
+      color: #3f535d;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .tip-block .content {
+      color: #2d3a40;
+      font-size: 0.95rem;
+    }
+
+    .faq-mini {
+      margin: 2.8rem 0 1.2rem;
+      border-top: 1px solid #e2e9ec;
+      padding-top: 1.8rem;
+    }
+
+    .faq-mini details {
+      margin-bottom: 0.9rem;
+    }
+
+    .faq-mini summary {
+      font-weight: 470;
+      font-size: 0.98rem;
+      cursor: pointer;
+      padding: 0.4rem 0;
+      color: #1e2a2f;
+      list-style: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .faq-mini summary::before {
+      content: "▸";
+      color: #889ba5;
+      font-size: 1.1rem;
+      margin-right: 0.6rem;
+      transition: transform 0.15s;
+    }
+
+    .faq-mini details[open] summary::before {
+      transform: rotate(90deg);
+    }
+
+    .faq-mini .faq-answer {
+      margin-left: 1.7rem;
+      font-size: 0.92rem;
+      color: #3e515a;
+      padding: 0.2rem 0 0.6rem;
+    }
+
+    a {
+      color: #1a5a70;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    a:hover {
+      border-bottom-color: #1a5a70;
+      color: #0d3b4b;
+    }
+
+    .footer-note {
+      margin-top: 3.5rem;
+      font-size: 0.82rem;
+      color: #84949d;
+      border-top: 1px solid #e2e9ec;
+      padding-top: 1.8rem;
+      text-align: left;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e7edf0;
+      margin: 1.8rem 0;
+    }
+
+    /* 响应式 */
+    @media (max-width: 480px) {
+      .page {
+        padding: 2rem 1.2rem 3rem;
+      }
+      h1 {
+        font-size: 1.7rem;
+      }
+      .feature-item {
+        flex: 1 1 100%;
+      }
+      .scene-note {
+        padding: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- hero / 摘要 -->
+    <h1>jjb · 说明与方向</h1>
+    <div class="subhead">一套围绕信息整合与轻量化访问的产品思路</div>
+
+    <p>
+      <a href="https://en-jjb.com">jjb</a> 所指向的站点，更侧重于提供结构化的内容聚合与便捷的浏览体验。它并非一个功能繁重的平台，而是一个经过梳理的信息落脚点：尝试在简洁的界面下，把分散的条目、更新或参考线索以可读的方式组织在一起。无论是快速查阅还是日常浏览，这里都保持克制的呈现节奏。
+    </p>
+
+    <p>
+      整个页面的设计以「少干扰」为基调，没有冗余的弹窗或复杂的注册流程。你看到的内容即是它的核心——不需要额外的决策负担。如果你偏好直接且干净的浏览环境，也许会喜欢这种不堆砌信息的处理方式。
+    </p>
+
+    <!-- 亮点 用卡片表达 -->
+    <h2>几个值得留意的特点</h2>
+    <div class="feature-grid">
+      <div class="feature-item">
+        <em>条目优先</em>
+        <span>内容以条目化方式陈列，减少长篇大论的阅读压力，适合快速定位自己关心的部分。</span>
+      </div>
+      <div class="feature-item">
+        <em>轻量响应</em>
+        <span>页面针对不同屏幕做了基础适配，移动端和桌面端的阅读体验保持一致，没有割裂感。</span>
+      </div>
+      <div class="feature-item">
+        <em>低噪背景</em>
+        <span>不使用自动播放媒体、弹窗提示或强制推送，浏览节奏完全由你控制。</span>
+      </div>
+    </div>
+
+    <!-- 使用建议 场景化表达 -->
+    <div class="scene-note">
+      <p><strong>常见的使用场景</strong></p>
+      <p>▪ 当你需要快速查阅某个分类下的条目，或者想了解近期有哪些更新时，可以直接在站内按照分区浏览。站点的导航比较直白，无需反复点击即可看到主要内容。</p>
+      <p>▪ 如果你在查找一个更安静的线上参考点，不希望被广告或推荐流分散注意力，那么这里的设计初衷恰好符合这类需求。</p>
+      <p>▪ 也可以把 <a href="https://en-jjb.com">jjb</a> 视为一个轻量化的起点——用它来访问特定的内容集合，而不必经过层层筛选或订阅流程。</p>
+    </div>
+
+    <!-- 可信但克制的访问说明 -->
+    <div class="tip-block">
+      <div class="marker">说明</div>
+      <div class="content">
+        该站点目前不收集个人浏览数据，也未嵌入第三方追踪脚本。所有页面均通过标准 HTTPS 传输，你可以像阅读一份静态文档一样使用它。没有会员体系，也没有隐藏付费内容；所见即所得。
+      </div>
+    </div>
+
+    <!-- FAQ摘要 两三个自然问答 -->
+    <div class="faq-mini">
+      <h2>常见想法</h2>
+      <details>
+        <summary>站点主要更新什么内容？</summary>
+        <div class="faq-answer">目前以资讯整理和条目索引为主，更新频率不高但力求准确。每次变化会在首页做简短提示。</div>
+      </details>
+      <details>
+        <summary>是否需要注册或登录？</summary>
+        <div class="faq-answer">完全不需要。所有页面公开可读，不设置用户系统，也不要求提供任何个人信息。</div>
+      </details>
+      <details>
+        <summary>移动端浏览体验如何？</summary>
+        <div class="faq-answer">页面采用窄正文与弹性布局，在手机、平板和电脑上均能自然缩放，文字大小与间距已针对小屏优化。</div>
+      </details>
+    </div>
+
+    <hr>
+
+    <p style="font-size:0.93rem;">
+      如果你对站点的具体内容或组织方式有好奇，不妨直接打开 <a href="https://en-jjb.com">jjb</a> 浏览。保持低预期往往会有更舒服的阅读体验。希望这个简短的介绍对你判断它是否有帮助提供了参考。
+    </p>
+
+    <div class="footer-note">
+      © 未归类 · 产品说明页 · 仅作介绍用途
+    </div>
+
+  </div>
+</body>
+</html>
