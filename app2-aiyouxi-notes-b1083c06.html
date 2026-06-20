@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>爱游戏 · 一方安静的岛屿</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f4f4f0;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+      color: #2c2c2a;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page-wrap {
+      max-width: 780px;
+      width: 100%;
+    }
+
+    /* 开场短句 */
+    .opening {
+      margin: 3rem 0 2.2rem 0;
+      font-size: 1.3rem;
+      font-weight: 320;
+      letter-spacing: 0.02em;
+      border-left: 3px solid #b8b4aa;
+      padding-left: 1.2rem;
+      color: #4a4a46;
+      line-height: 1.5;
+    }
+
+    .opening em {
+      font-style: normal;
+      background: rgba(180, 170, 150, 0.12);
+      padding: 0.1rem 0.25rem;
+      border-radius: 2px;
+    }
+
+    /* 卡片通用设计 */
+    .card {
+      background: #ffffff;
+      border: 1px solid #e0ddd6;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02), 0 1px 3px rgba(0,0,0,0.03);
+      padding: 1.8rem 1.8rem 2rem 1.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .card h2 {
+      font-size: 1.2rem;
+      font-weight: 450;
+      letter-spacing: 0.01em;
+      margin-bottom: 1.2rem;
+      color: #3e3e3a;
+      border-bottom: 1px dashed #dedbd2;
+      padding-bottom: 0.5rem;
+    }
+
+    .card p {
+      margin-bottom: 1rem;
+      color: #3b3b37;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 特点列表——温和无框 */
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 0.25rem;
+    }
+
+    .feature-list li {
+      position: relative;
+      padding: 0.6rem 0 0.6rem 1.8rem;
+      border-bottom: 1px solid #f0ede7;
+    }
+
+    .feature-list li:last-child {
+      border-bottom: none;
+    }
+
+    .feature-list li::before {
+      content: "—";
+      position: absolute;
+      left: 0.2rem;
+      color: #a7a298;
+      font-weight: 300;
+    }
+
+    /* 承接段落/场景 */
+    .scene-tone {
+      background: #fafaf7;
+      border: 1px solid #e3dfd7;
+      border-radius: 14px;
+      padding: 1.6rem 1.8rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.01);
+    }
+
+    .scene-tone p {
+      font-size: 0.98rem;
+      color: #3d3d39;
+    }
+
+    /* 链接风格 */
+    a {
+      color: #5f5b50;
+      text-decoration: none;
+      border-bottom: 1px solid #cbc7bc;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    a:hover {
+      color: #25221c;
+      border-bottom-color: #8a8476;
+    }
+
+    /* 温和结尾 */
+    .gentle-footer {
+      margin-top: 2.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #6c6960;
+      border-top: 1px solid #dedbd2;
+      padding-top: 1.8rem;
+      line-height: 1.7;
+    }
+
+    .gentle-footer small {
+      display: inline-block;
+      margin-top: 0.4rem;
+      font-size: 0.8rem;
+      color: #949084;
+    }
+
+    /* FAQ 摘要 — 简洁折叠感 */
+    .faq-mini {
+      margin-top: 0.8rem;
+    }
+
+    .faq-mini details {
+      margin-bottom: 0.5rem;
+      border-bottom: 1px solid #eeeae2;
+      padding-bottom: 0.25rem;
+    }
+
+    .faq-mini summary {
+      cursor: pointer;
+      font-weight: 400;
+      color: #4d4942;
+      padding: 0.25rem 0;
+      font-size: 0.95rem;
+    }
+
+    .faq-mini summary:hover {
+      color: #312e28;
+    }
+
+    .faq-mini details p {
+      margin: 0.5rem 0 0.8rem 0.8rem;
+      font-size: 0.92rem;
+      color: #535049;
+    }
+
+    /* 响应式 */
+    @media (max-width: 520px) {
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+      .card {
+        padding: 1.3rem 1rem 1.5rem 1rem;
+      }
+      .opening {
+        font-size: 1.1rem;
+        margin: 1.8rem 0 1.5rem 0;
+        padding-left: 1rem;
+      }
+      .scene-tone {
+        padding: 1.2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <!-- 开场短句 -->
+  <div class="opening">
+    有些地方，不用特意去记，<br>
+    走着走着就到了。<br>
+    <em>爱游戏</em> 就是这样一种存在。
+  </div>
+
+  <!-- 承接段落：稳定入口与页面说明 -->
+  <div class="scene-tone">
+    <p>
+      几年前开始留意 <a href="https://app2-aiyouxi.com">爱游戏</a> 这个站点，那时候它给我的印象是“干净、没有多余的装饰”。后来每逢想找个安静角落读读游戏相关的随笔、或是查看某部老作品的资料，总会自然地去那里翻一翻。页面打开很快，布局始终是那种不刺眼的浅灰色底，文字排列得舒舒服服。渐渐它就成了我浏览器里一个固定的标签页——谈不上每天用，但想到的时候它总在那里。
+    </p>
+    <p style="margin-top: 0.8rem;">
+      谈不上什么宏大的理由，一个稳定的入口本身就有它的分量。不用记住复杂的路径，不需要忍受弹窗和浮夸的 banner。打开就是内容本身，这大概就是 <a href="https://app2-aiyouxi.com">爱游戏</a> 一直保留的气质。
+    </p>
+  </div>
+
+  <!-- 特点列表卡片 -->
+  <div class="card">
+    <h2>● 寻常但踏实的特点</h2>
+    <ul class="feature-list">
+      <li>页面以文字信息为主，版式通透，不刻意堆砌视觉元素</li>
+      <li>没有强制注册或关注，访问即看，离开即忘</li>
+      <li>内容更新节奏平稳，不制造信息焦虑，适合慢慢翻阅</li>
+      <li>链接和导航清晰克制，极少出现追踪脚本或冗余模块</li>
+      <li>移动端适配自然，横竖屏切换都不会破坏阅读节奏</li>
+    </ul>
+    <p style="margin-top: 1rem; font-size: 0.95rem; color: #5c5951;">
+      这些特点单独看都不算惊艳，但凑在一起就成了一个很难得的地方。
+    </p>
+  </div>
+
+  <!-- 场景（代替固定“场景”标题，融在段落里） -->
+  <div class="card" style="background: #fcfcf9;">
+    <p>
+      有时候周末下午，阳光斜照进书房，我会打开 <a href="https://app2-aiyouxi.com">爱游戏</a> 随便翻翻。没有特定目的，就是顺着目录往下滑，碰到感兴趣的标题就点进去读几段。那些文章篇幅不长，语气像是朋友随口聊起某款游戏，偶尔带着一点个人回忆，但从不强行输出观点。读完之后常常不会记住全部细节，但那种放松的感觉会留很久。
+    </p>
+    <p style="margin-top: 0.9rem;">
+      也试过在通勤的地铁上用手机打开它，加载速度依然让人安心。没有突然弹出的视频，也没有催促你登录的遮罩层。这种体验在今天的网页里反而显得珍贵。
+    </p>
+  </div>
+
+  <!-- FAQ 摘要卡片（轻量，不喧宾夺主） -->
+  <div class="card">
+    <h2>▍ 可能会有的几个疑问</h2>
+    <div class="faq-mini">
+      <details>
+        <summary>这个站需要付费吗？</summary>
+        <p>不需要。目前所有可见内容都是免费阅读的，也没有发现隐藏的付费墙或订阅要求。</p>
+      </details>
+      <details>
+        <summary>内容偏向哪些类型的游戏？</summary>
+        <p>以单机、独立作品和部分经典老游戏为主，偶尔涉及一些游戏文化相关的杂谈，范围比较广，但整体调性偏安静。</p>
+      </details>
+      <details>
+        <summary>有没有社区或留言功能？</summary>
+        <p>据我观察，站点本身没有开放评论或论坛，更像是一个人的笔记式分享。如果想交流，可以通过站内偶尔留下的联系方式试着写信。</p>
+      </details>
+    </div>
+    <p style="margin-top: 0.8rem; font-size: 0.9rem; color: #6b6760;">
+      —— 以上仅仅是我个人使用中的感受，不一定覆盖所有情况，仅供参考。
+    </p>
+  </div>
+
+  <!-- 温和结尾 -->
+  <div class="gentle-footer">
+    <p>
+      一个能让人安心停留的地方，不需要太多理由。<br>
+      如果你也喜欢这样不紧不慢的节奏，不妨把 <a href="https://app2-aiyouxi.com">爱游戏</a> 放在书签里。
+    </p>
+    <small>页面内容基于个人视角叙述 · 2025</small>
+  </div>
+
+</div>
+
+</body>
+</html>
